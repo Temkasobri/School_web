@@ -42,6 +42,8 @@ main {
 .menu {
     margin-top: 13px;
     display: flex;
+    list-style: none;
+    z-index: 10;
 }
 
 .menu ul {
@@ -55,18 +57,45 @@ li {
     z-index: 3;
 }
 
-.menu ul li:hover {
+.link {
+    text-decoration: none;
+    color: rgb(54, 54, 54);
+    font-size: 14px;
+    position: relative;
+}
+
+.link::after {
+    content: '';
+    width: 100%;
+    height: 1.5px;
+    background-color: #31aada;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .45s ease;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* .menu ul li:hover {
     height: 2px;
     width: fit-content;
     background: #31aada;
     transition: all 1s ease-out;
-}
+} */
 
-.menu ul a {
+
+/* .menu ul a {
     text-decoration: none;
     color: rgb(54, 54, 54);
     font-size: 14px;
-}
+} */
 
 .icon-menu {
     position: relative;
@@ -218,12 +247,10 @@ h2 {
 
 .section-2 {
     width: 70%;
-    border-radius: 15px;
-    background: gold;
-    background-image: url(./img/purepng.com-2cd43b-1f2f8a8fe0444c828f27d6241c173477-mv2musicheadphoneearphoneslisteningearssounds-231519334370fe7mk.png);
-    background-size: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
+    border-radius: 0 15px 0 0;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    z-index: -1;
 }
 
 
@@ -377,7 +404,7 @@ h2 {
 }
 
 .section-7 span {
-    color: #31aada;
+    color: #2880be;
 }
 
 .section-7 button {
@@ -412,7 +439,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 60px;
     width: 100vw;
     max-width: 1200px;
     resize: both;
@@ -427,7 +454,7 @@ h2 {
 }
 
 .wrapper-3 {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
